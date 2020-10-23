@@ -3,9 +3,11 @@ class SessionsController < ApplicationController
   end
 
   def create
-    binding.pry
-    session[:username] = params[:username]
-    redirect_to '/'
+    if params[:name].present?
+      session[:name] = params[:username]
+      redirect_to '/'
+    else
+      render: 'session/new'
   end
 
   def destroy
