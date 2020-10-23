@@ -13,6 +13,10 @@ class SessionsController < ApplicationController
 
   def destroy
     binding.pry
+    if session[:name].present?
+      session.delete :name
+    else
+      redirect_to '/'
   end
 
 end
