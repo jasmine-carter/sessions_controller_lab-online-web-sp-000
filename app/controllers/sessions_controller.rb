@@ -3,6 +3,7 @@ class SessionsController < ApplicationController
   end
 
   def create
+    binding.pry
     session[:username] = params[:username]
     redirect_to '/'
   end
